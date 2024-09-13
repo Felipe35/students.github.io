@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Purchased</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Major</h1>
+        <div style='padding: 5px;'>
+            <button type='button' class="btn btn-primary" id="btn1" onClick="getData('CIT')">CIT Majors</button>
+            <button type='button' class="btn btn-primary" id="btn2" onClick="getData('BUS')">Business Majors</button>
+        </div>
+        <div id="majorTable"></div>
+        
+    </div>
+    <script src="./cit5Students.js"></script>
+</body>
+<script type="text/x-handlebars-template" id="majorTemplate">
+    <table class="table table-striped">
+    <tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+    {{#each majors}}
+    <tr>
+    
+   <td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+    </tr>
+    {{/each}}
+    </table>
+</script>
+</html>
